@@ -9,6 +9,9 @@
 <meta name="description" content="Qubes Bootstrap 4x admin is super flexible, powerful, clean &amp; modern responsive admin dashboard with unlimited possibilities.">
 <meta name="keywords" content="admin template, Qubes admin template, dashboard template, flat admin template, responsive admin template, web app, Light Dark version">
 <meta name="author" content="GetBootstrap, design by: puffintheme.com">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
 
 
 <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -24,6 +27,7 @@
 
 <!-- MAIN CSS -->
 <link rel="stylesheet" href="assets/css/site.min.css">
+<link rel="stylesheet" href="assets/css/demo.css">
 
 </head>
 <body class="theme-blue">
@@ -62,8 +66,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#" class="icon-menu reports">Reports</a></li>
                         <li><a href="#" class="icon-menu project">Project</a></li>
-                        <li><a href="#" class="icon-menu settings">Settings</a></li>                        
-                        <li class="dropdown">
+                        <li><a href="#" class="icon-menu settings">Settings</a></li> 
+                        <li><a href="#" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Data</a></li>
+                        
                             <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown"><i class="fa fa-envelope"></i>
                                 <span class="notification-dot bg-green"></span>
                             </a>
@@ -175,31 +180,50 @@
                     </ul>
                 </div>
             </div>
-            <div><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Data</button></div>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <input class=" mb-3" id="file" type="file">
-                      <input class="form form-control mb-3"type="text" id="itemname" placeholder="Item Name">
-                      <input class="form form-control mb-3"type="text" id="description" placeholder="Description">
-                      <input class="form form-control mb-3"type="number" id="price" placeholder="price">
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary" id="submit">Submit</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
-        
+            
+            
     </nav>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+              <th scope="col">Item Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Item Price</th>
+               
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+              <th scope="col">Profile Image</th>
+            </tr>
+          </thead>
+          <tbody id="allproducts">
+        
+          </tbody>
+    </table>
+   
+    <!-- Modal -->
+    <div class=" modal1 modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <input class=" mb-3" id="file" type="file">
+              <input class="form form-control mb-3"type="text" id="itemname" placeholder="Item Name">
+              <input class="form form-control mb-3"type="text" id="description" placeholder="Description">
+              <input class="form form-control mb-3"type="number" id="price" placeholder="price">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="submit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
   
 
     <div id="rightbar" class="rightbar">
@@ -237,6 +261,9 @@
             </div>
         </div>
     </div>
+   
+    
+    
     
 
     <div id="left-sidebar" class="sidebar">
@@ -511,7 +538,6 @@
     
                                        
 </div>
-
 
 
 <!-- Javascript -->
