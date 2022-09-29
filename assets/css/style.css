@@ -18394,5 +18394,47 @@ body.offcanvas-open {
 .page-pagination li a:hover {
   color: #ff7004;
 }
+.products{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  
+}
+.items{
 
+  height: 300px;
+  width: 300px;
+  float: right;
+  color: black;
+  background-color: grey;
+  margin-left: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  align-items: center;
+ 
+}
+.items img{
+  height: 200px;
+  width: 200px;
+}
+.item{
+  height: 500px;
+  width: 500px;
+  float: right;
+  color: black;
+  background-color: grey;
+  margin-left: 400px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  align-items: center;
+}
+.item img{
+  height: 200px;
+  width: 200px;
+  align-items: center;
+}
+.item btn{
+  margin-top: 10px;
+}
 
