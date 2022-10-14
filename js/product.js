@@ -1,25 +1,25 @@
-firebase.firestore().collection("products").get().then((querySnapshot)=>{
-    let content = '';
-    querySnapshot.forEach((doc)=>{
-        let itemname = doc.data().itemname;
-        let description = doc.data().description;
-        let itemprice = doc.data().itemprice;
-        let timeStamp = doc.data().timeStamp;
-        let docId = doc.data().docId;
-        let profileimage = doc.data().profileimage;
-        let imageLink = doc.data().imageLink;
+let receivedId = decodeURIComponent(window.location.search);
 
-        content+= '<a href="" class="item">' 
-        
-            content += '<img src="'+imageLink+'">'
-            content+= '<div class="itemname">'+itemname+'</div>'
-            content+= '<div class="description">'+description+'</div>'
-            content+= '<div class="price"> KES '+itemprice+'</div>'
-            content += '<button class="btn btn-primary">Pay</button>'
-            
+let productId = receivedId.substring(1)
+console.log(productId);
+firebase.firestore().collection("products").doc(productId).get().then((doc)=>{
 
-        content+= '</a>'
-    })
-    $("#product").append(content);
-    
+    let itemname = doc.data().itemname;
+    let description = doc.data().description;
+    let itemprice = doc.data().itemprice;
+    let timeStamp = doc.data().timeStamp;
+    let imageLink = doc.data().imageLink;
+
+    document.getElementById("productimage").src = imageLink;
+    document.getElementById("productname").innerHTML = itemname;
+    document.getElementById("description").innerHTML = description;
+    document.getElementById("price").innerHTML = itemprice;
+
 })
+
+
+
+
+
+
+

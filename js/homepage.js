@@ -8,8 +8,9 @@ firebase.firestore().collection("products").get().then((querySnapshot)=>{
         let docId = doc.data().docId;
         let profileimage = doc.data().profileimage;
         let imageLink = doc.data().imageLink;
+        let productlink = "product.html" + "?" + docId
 
-        content+= '<a href="product.html" class="items">' 
+        content+= '<a href="'+productlink+'" class="items">' 
 
             content += '<img src="'+imageLink+'">'
             content+= '<div class="itemname">'+itemname+'</div>'
